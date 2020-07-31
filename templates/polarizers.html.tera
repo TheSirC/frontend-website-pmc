@@ -1,0 +1,35 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}Polarizers{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Diameter</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Localisation</th>
+<th>Wavelength range</th>
+<th>Type</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for polarizer in rows -%}
+<tr>
+<td>{{polarizer.manufacturer}}</td>
+<td>{{polarizer.model}}</td>
+<td>{{polarizer.diameter}}</td>
+<td>{{polarizer.quantity}}</td>
+<td>{{polarizer.shape}}</td>
+<td>{{polarizer.mounted}}</td>
+<td>{{polarizer.localisation}}</td>
+<td>{{polarizer.lower_operatingwavelengthrange_bound }} - {{polarizer.upper_operatingwavelengthrange_bound }}</td>
+<td>{{polarizer.model_type}}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}

@@ -1,0 +1,43 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}Beamsplitters{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Diameter</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Localisation</th>
+<th>Wavelength range</th>
+<th>Antireflection range</th>
+<th>Type</th>
+<th>Reflectance</th>
+<th>Transmittance</th>
+<th>Thickness</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for beamsplitter in rows -%}
+<tr>
+<td>{{beamsplitter.manufacturer}}</td>
+<td>{{beamsplitter.model}}</td>
+<td>{{beamsplitter.diameter}}</td>
+<td>{{beamsplitter.quantity}}</td>
+<td>{{beamsplitter.shape}}</td>
+<td>{{beamsplitter.mounted}}</td>
+<td>{{beamsplitter.localisation}}</td>
+<td>{{beamsplitter.lower_operatingwavelengthrange_bound}} - {{ beamsplitter.upper_operatingwavelengthrange_bound}}</td>
+<td>{{beamsplitter.lower_arrange_bound}} - {{ beamsplitter.upper_arrange_bound}}</td>
+<td>{{beamsplitter.model_type}}</td>
+<td>{{beamsplitter.reflectance}}</td>
+<td>{{beamsplitter.transmittance}}</td>
+<td>{{beamsplitter.thickness}}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}

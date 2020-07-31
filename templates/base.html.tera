@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Stock PMC - {% block title %}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/datatables.css" type="text/css"  />
+    <link rel="stylesheet" href="../assets/css/ion.rangeSlider.min.css" type="text/css"  />
+    <link rel="stylesheet" href="../assets/css/main.css" type="text/css"  />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+    <body>
+      <nav>
+        <a href="/stock/beamsplitters">Beamsplitters</a>
+        <a href="/stock/filters">Filters</a>
+        <a href="/stock/lenses">Lenses</a>
+        <a href="/stock/lasers">Lasers</a>
+        <a href="/stock/leds">LEDs</a>
+        <a href="/stock/mirrors">Mirrors</a>
+        <a href="/stock/polarizers">Polarisers</a>
+        <a href="/stock/waveplates">Waveplates</a>
+      </nav>
+      <article>
+          <div class="filters">
+                {% block filters %}
+                {% endblock filters %}
+          </div>   
+          <table id="stock">
+              <thead>
+                  <tr>
+                      {% block tablehead %}{% endblock tablehead %}
+                  </tr>
+              </thead> 
+              <tbody>
+                      {% block tabledata %}{% endblock tabledata %}
+              </tbody>
+          </table>
+      </article>
+      <script src="../assets/js/jquery-3.5.1.min.js"></script>
+      <script src="../assets/js/datatables.js"></script>
+      <script src="../assets/js/ion.rangeSlider.min.js"></script>
+      <script src="../assets/js/index.js"></script>
+    </body>

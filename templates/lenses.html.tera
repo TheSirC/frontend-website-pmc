@@ -1,0 +1,41 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}Lenses{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Focal length</th>
+<th>Diameter</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Mount type</th>
+<th>Localisation</th>
+<th>Wavelength range</th>
+<th>Antireflection range</th>
+<th>Type</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for lense in rows -%}
+<tr>
+<td>{{lense.manufacturer}}</td>
+<td>{{lense.model}}</td>
+<td>{{lense.focal_length}}</td>
+<td>{{lense.diameter}}</td>
+<td>{{lense.quantity}}</td>
+<td>{{lense.shape}}</td>
+<td>{{lense.mounted}}</td>
+<td>{{lense.mount_type}}</td>
+<td>{{lense.localisation}}</td>
+<td>{{lense.lower_operatingwavelengthrange_bound}} - {{lense.upper_operatingwavelengthrange_bound}}</td>
+<td>{{lense.lower_arrange_bound}} - {{lense.upper_arrange_bound}}</td>
+<td>{{lense.model_type}}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}

@@ -1,0 +1,35 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}Lasers{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Localisation</th>
+<th>Maximum output power</th>
+<th>Operating voltage</th>
+<th>Output wavelength</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for laser in rows -%}
+<tr>
+<td>{{laser.manufacturer}}</td>
+<td>{{laser.model}}</td>
+<td>{{laser.quantity}}</td>
+<td>{{laser.shape}}</td>
+<td>{{laser.mounted}}</td>
+<td>{{laser.localisation}}</td>
+<td>{{laser.maxpower}}</td>
+<td>{{laser.voltage}}</td>
+<td>{{laser.wavelength}}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}

@@ -1,12 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
 
-/*
-	Multiverse by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 @-moz-keyframes spinner {
 	0% {
 		-moz-transform: rotate(0deg);
@@ -1213,6 +1207,10 @@ input, select, textarea {
 			opacity: 1;
 		}
 
+		.poptrox-popup .pic > img {
+			width:0;
+		}
+
 		.poptrox-popup .closer {
 			-moz-transition: opacity 0.2s ease-in-out;
 			-webkit-transition: opacity 0.2s ease-in-out;
@@ -1269,6 +1267,7 @@ input, select, textarea {
 			background-image: -webkit-linear-gradient(to top, rgba(16,16,16,0.45) 25%, rgba(16,16,16,0) 100%);
 			background-image: -ms-linear-gradient(to top, rgba(16,16,16,0.45) 25%, rgba(16,16,16,0) 100%);
 			background-image: linear-gradient(to top, rgba(16,16,16,0.45) 25%, rgba(16,16,16,0) 100%);
+			top:0;
 			bottom: 0;
 			cursor: default;
 			left: 0;
@@ -2050,3 +2049,35 @@ input, select, textarea {
 		#footer .copyright a {
 			color: inherit;
 		}
+
+		article {
+			display: flex;
+			margin-top: 2em;
+			flex-direction: column;
+		}
+
+		nav {
+			margin: 1em;
+			display: flex;
+			width: 75%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+.filters {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 1em 1em 0.5em;
+}
+
+.filters > div {
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	margin-left: 1em;
+	margin-right: 1.75em;
+}
+
+article > div:nth-child(2) {
+	margin: 1em;
+}

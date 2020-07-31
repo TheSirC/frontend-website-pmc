@@ -1,0 +1,33 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}Mirrors{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Diameter</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Localisation</th>
+<th>Wavelength range</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for mirror in rows -%}
+<tr>
+<td>{{mirror.manufacturer}}</td>
+<td>{{mirror.model}}</td>
+<td>{{mirror.diameter}}</td>
+<td>{{mirror.quantity}}</td>
+<td>{{mirror.shape}}</td>
+<td>{{mirror.mounted}}</td>
+<td>{{mirror.localisation}}</td>
+<td>{{mirror.lower_operatingwavelengthrange_bound}} - {{mirror.upper_operatingwavelengthrange_bound}}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}

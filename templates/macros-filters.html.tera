@@ -1,0 +1,6 @@
+{% macro input(label, params) %}
+   <div class="filter">
+        <label>{{ label }}</label>
+        <input type="text" class="sampleSlider" name={{ label | slugify }} {{ params | safe }}/>
+   </div>
+{% endmacro input %}

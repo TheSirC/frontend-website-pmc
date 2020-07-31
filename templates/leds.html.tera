@@ -1,0 +1,39 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}LEDs{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Localisation</th>
+<th>Wavelength range</th>
+<th>Color</th>
+<th>Operating voltage</th>
+<th>Operating current</th>
+<th>Maximum output power</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for led in rows -%}
+<tr>
+<td>{{led.manufacturer}}</td>
+<td>{{led.model}}</td>
+<td>{{led.quantity}}</td>
+<td>{{led.shape}}</td>
+<td>{{led.mounted}}</td>
+<td>{{led.localisation}}</td>
+<td>{{led.lower_operatingwavelengthrange_bound}} - {{led.upper_operatingwavelengthrange_bound}}</td>
+<td>{{led.color}}</td>
+<td>{{led.operatingvoltage}}</td>
+<td>{{led.operatingcurrent}}</td>
+<td>{{led.maxpower}}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}

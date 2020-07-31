@@ -1,0 +1,35 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}Waveplates{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="2500"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="2500"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Diameter</th>
+<th>Wavelength range</th>
+<th>Antireflection range</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Localisation</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for waveplate in rows -%}
+<tr>
+<td>{{waveplate.manufacturer}}</td>
+<td>{{waveplate.model}}</td>
+<td>{{waveplate.diameter}}</td>
+<td>{{waveplate.lower_operatingwavelengthrange_bound}} - {{waveplate.upper_operatingwavelengthrange_bound}}</td>
+<td>{{waveplate.lower_arrange_bound}} - {{waveplate.upper_arrange_bound}}</td>
+<td>{{waveplate.quantity}}</td>
+<td>{{waveplate.shape}}</td>
+<td>{{waveplate.mounted}}</td>
+<td>{{waveplate.localisation}}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}

@@ -1,0 +1,35 @@
+{% extends "base" %}
+{% import "macros-filters" as filters %}
+{% block title %}Filters{% endblock title %}
+{% block filters %}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
+{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{% endblock filters %}
+{% block tablehead %}
+<th>Manufacturer</th>
+<th>Model</th>
+<th>Diameter</th>
+<th>Quantity</th>
+<th>Shape</th>
+<th>Mounted</th>
+<th>Localisation</th>
+<th>Wavelength range</th>
+<th>Adjustable</th>
+{% endblock tablehead %}
+{% block tabledata %}
+{% for filter in rows -%}
+<tr>
+<td>{{ filter.manufacturer }}</td>
+<td>{{ filter.model }}</td>
+<td>{{ filter.diameter }}</td>
+<td>{{ filter.quantity }}</td>
+<td>{{ filter.shape }}</td>
+<td>{{ filter.mounted }}</td>
+<td>{{ filter.localisation }}</td>
+<td>{{filter.lower_operatingwavelengthrange_bound}} - {{ filter.upper_operatingwavelengthrange_bound}}</td>
+<td>{{ filter.adjustable }}</td>
+</tr>
+{%- endfor %}
+{% endblock tabledata %}
