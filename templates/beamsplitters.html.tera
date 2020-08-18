@@ -32,8 +32,8 @@
 <td>{{beamsplitter.shape}}</td>
 <td>{{beamsplitter.mounted}}</td>
 <td>{{beamsplitter.localisation}}</td>
-<td>{{beamsplitter.lower_operatingwavelengthrange_bound}} - {{ beamsplitter.upper_operatingwavelengthrange_bound}}</td>
-<td>{{beamsplitter.lower_arrange_bound}} - {{ beamsplitter.upper_arrange_bound}}</td>
+<td>{{beamsplitter.lower_operatingwavelengthrange_bound}} - {{beamsplitter.upper_operatingwavelengthrange_bound}}</td>
+<td>{{beamsplitter.lower_arrange_bound}} - {{beamsplitter.upper_arrange_bound}}</td>
 <td>{{beamsplitter.model_type}}</td>
 <td>{{beamsplitter.reflectance}}</td>
 <td>{{beamsplitter.transmittance}}</td>

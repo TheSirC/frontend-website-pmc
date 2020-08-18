@@ -28,7 +28,7 @@
 <td>{{ filter.shape }}</td>
 <td>{{ filter.mounted }}</td>
 <td>{{ filter.localisation }}</td>
-<td>{{filter.lower_operatingwavelengthrange_bound}} - {{ filter.upper_operatingwavelengthrange_bound}}</td>
+<td>{{ filter.lower_operatingwavelengthrange_bound }} - {{ filter.upper_operatingwavelengthrange_bound }}</td>
 <td>{{ filter.adjustable }}</td>
 </tr>
 {%- endfor %}

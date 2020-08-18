@@ -27,7 +27,7 @@
 <td>{{mirror.shape}}</td>
 <td>{{mirror.mounted}}</td>
 <td>{{mirror.localisation}}</td>
-<td>{{mirror.lower_operatingwavelengthrange_bound}} - {{mirror.upper_operatingwavelengthrange_bound}}</td>
+<td>{{mirror.lower_operatingwavelengthrange_bound }} - {{mirror.upper_operatingwavelengthrange_bound}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}
