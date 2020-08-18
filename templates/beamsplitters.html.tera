@@ -41,3 +41,17 @@
 </tr>
 {%- endfor %}
 {% endblock tabledata %}
+{% block script %}
+filters = [
+    { column_number: 7, slider : $("input[name*='wavelength']") },
+    { column_number: 8, slider : $("input[name*='antireflection']") },
+    { column_number: 10, slider : $("input[name*='reflectance']") },
+    { column_number: 11, slider : $("input[name*='transmittance']") }
+];
+        filters.map(currentValue => {
+$.fn.dataTable.ext.search.push(
+    filter(currentValue)
+);
+})
+$(".sampleSlider").on("change", () => {$("#stock").DataTable().draw()})
+{% endblock script %}

@@ -1,11 +1,8 @@
-{% extends "base" %}
+{% extends  "base" %}
 {% import "macros-filters" as filters %}
 {% block title %}Filters{% endblock title %}
 {% block filters %}
-{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
-{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
-{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
-{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="200" data-max="2500"`) }}
 {% endblock filters %}
 {% block tablehead %}
 <th>Manufacturer</th>
@@ -33,3 +30,14 @@
 </tr>
 {%- endfor %}
 {% endblock tabledata %}
+{% block script %}
+filters = [
+    {column_number: 7, slider : $("input[name*='wavelength']") },
+]
+        filters.map(currentValue => {
+$.fn.dataTable.ext.search.push(
+    filter(currentValue)
+);
+})
+$(".sampleSlider").on("change", () => {$("#stock").DataTable().draw()})
+{% endblock script %}

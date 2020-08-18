@@ -32,3 +32,16 @@
 </tr>
 {%- endfor %}
 {% endblock tabledata %}
+{% block script %}
+filters = [
+    {column_number: 6, slider : $("input[name*='power']") },
+    {column_number: 7, slider : $("input[name*='voltage']") },
+    {column_number: 8, slider : $("input[name*='wavelen']") },
+]
+        filters.map(currentValue => {
+$.fn.dataTable.ext.search.push(
+    filter(currentValue)
+);
+})
+$(".sampleSlider").on("change", () => {$("#stock").DataTable().draw()})
+{% endblock script %}

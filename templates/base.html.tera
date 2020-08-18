@@ -4,7 +4,7 @@
     <title>Stock PMC - {% block title %}{% endblock title %}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../assets/css/datatables.css" type="text/css"  />
+    <link rel="stylesheet" href="../assets/css/datatables.min.css" type="text/css"  />
     <link rel="stylesheet" href="../assets/css/ion.rangeSlider.min.css" type="text/css"  />
     <link rel="stylesheet" href="../assets/css/main.css" type="text/css"  />
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
@@ -40,4 +40,8 @@
       <script src="../assets/js/datatables.js"></script>
       <script src="../assets/js/ion.rangeSlider.min.js"></script>
       <script src="../assets/js/index.js"></script>
+      <script type="text/javascript" defer="defer">
+          {% block script %}
+          {% endblock script %}
+      </script>
     </body>
