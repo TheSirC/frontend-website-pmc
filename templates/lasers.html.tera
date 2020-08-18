@@ -2,10 +2,9 @@
 {% import "macros-filters" as filters %}
 {% block title %}Lasers{% endblock title %}
 {% block filters %}
-{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
-{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
-{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
-{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Maximum power", params=`data-postfix=" mW" data-min="1" data-max="2000"`) }}
+{{ filters::input(label="Operating voltage",params=`data-postfix=" mV" data-min="1" data-max="20"`) }}
+{{ filters::input(label="Wavelength range", params=`data-postfix=" nm" data-min="200" data-max="2000"`) }}
 {% endblock filters %}
 {% block tablehead %}
 <th>Manufacturer</th>

@@ -2,10 +2,7 @@
 {% import "macros-filters" as filters %}
 {% block title %}Polarizers{% endblock title %}
 {% block filters %}
-{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
-{{ filters::input(label="Antireflection range",params=`data-postfix=" nm" data-min="50" data-max="25000"`) }}
-{{ filters::input(label="Reflectance",params=`data-postfix=" %"`) }}
-{{ filters::input(label="Transmittance",params=`data-postfix=" %"`) }}
+{{ filters::input(label="Wavelength range",params=`data-postfix=" nm" data-min="200" data-max="2500"`) }}
 {% endblock filters %}
 {% block tablehead %}
 <th>Manufacturer</th>
