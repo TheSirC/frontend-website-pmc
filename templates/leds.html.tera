@@ -23,17 +23,17 @@
 {% block tabledata %}
 {% for led in rows -%}
 <tr>
-<td>{{led.manufacturer}}</td>
-<td>{{led.model}}</td>
-<td>{{led.quantity}}</td>
-<td>{{led.shape}}</td>
-<td>{{led.mounted}}</td>
-<td>{{led.localisation}}</td>
-<td>{{led.lower_operatingwavelengthrange_bound}} - {{led.upper_operatingwavelengthrange_bound}}</td>
-<td>{{led.color}}</td>
-<td>{{led.operatingvoltage}}</td>
-<td>{{led.operatingcurrent}}</td>
-<td>{{led.maxpower}}</td>
+<td>{{led.equipment.manufacturer}}</td>
+<td>{{led.equipment.model}}</td>
+<td>{{led.equipment.quantity}}</td>
+<td>{{led.equipment.shape}}</td>
+<td>{{led.equipment.mounted}}</td>
+<td>{{led.location.localisation}} - {{led.location.experimenter}}</td>
+<td>{{led.equipment.lower_operatingwavelengthrange_bound}} - {{led.equipment.upper_operatingwavelengthrange_bound}}</td>
+<td>{{led.equipment.color}}</td>
+<td>{{led.equipment.operatingvoltage}}</td>
+<td>{{led.equipment.operatingcurrent}}</td>
+<td>{{led.equipment.maxpower}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}

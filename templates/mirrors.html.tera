@@ -17,14 +17,14 @@
 {% block tabledata %}
 {% for mirror in rows -%}
 <tr>
-<td>{{mirror.manufacturer}}</td>
-<td>{{mirror.model}}</td>
-<td>{{mirror.diameter}}</td>
-<td>{{mirror.quantity}}</td>
-<td>{{mirror.shape}}</td>
-<td>{{mirror.mounted}}</td>
-<td>{{mirror.localisation}}</td>
-<td>{{mirror.lower_operatingwavelengthrange_bound }} - {{mirror.upper_operatingwavelengthrange_bound}}</td>
+<td>{{mirror.equipment.manufacturer}}</td>
+<td>{{mirror.equipment.model}}</td>
+<td>{{mirror.equipment.diameter}}</td>
+<td>{{mirror.equipment.quantity}}</td>
+<td>{{mirror.equipment.shape}}</td>
+<td>{{mirror.equipment.mounted}}</td>
+<td>{{mirror.location.localisation}} - {{mirror.location.experimenter}}</td>
+<td>{{mirror.equipment.lower_operatingwavelengthrange_bound }} - {{mirror.equipment.upper_operatingwavelengthrange_bound}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}

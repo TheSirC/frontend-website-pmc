@@ -19,15 +19,15 @@
 {% block tabledata %}
 {% for waveplate in rows -%}
 <tr>
-<td>{{waveplate.manufacturer}}</td>
-<td>{{waveplate.model}}</td>
-<td>{{waveplate.diameter}}</td>
-<td>{{waveplate.lower_operatingwavelengthrange_bound}} - {{waveplate.upper_operatingwavelengthrange_bound}}</td>
-<td>{{waveplate.lower_arrange_bound}} - {{waveplate.upper_arrange_bound}}</td>
-<td>{{waveplate.quantity}}</td>
-<td>{{waveplate.shape}}</td>
-<td>{{waveplate.mounted}}</td>
-<td>{{waveplate.localisation}}</td>
+<td>{{waveplate.equipment.manufacturer}}</td>
+<td>{{waveplate.equipment.model}}</td>
+<td>{{waveplate.equipment.diameter}}</td>
+<td>{{waveplate.equipment.lower_operatingwavelengthrange_bound}} - {{waveplate.equipment.upper_operatingwavelengthrange_bound}}</td>
+<td>{{waveplate.equipment.lower_arrange_bound}} - {{waveplate.equipment.upper_arrange_bound}}</td>
+<td>{{waveplate.equipment.quantity}}</td>
+<td>{{waveplate.equipment.shape}}</td>
+<td>{{waveplate.equipment.mounted}}</td>
+<td>{{waveplate.location.localisation}} - {{waveplate.location.experimenter}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}

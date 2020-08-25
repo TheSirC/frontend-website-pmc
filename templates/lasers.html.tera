@@ -20,15 +20,15 @@
 {% block tabledata %}
 {% for laser in rows -%}
 <tr>
-<td>{{laser.manufacturer}}</td>
-<td>{{laser.model}}</td>
-<td>{{laser.quantity}}</td>
-<td>{{laser.shape}}</td>
-<td>{{laser.mounted}}</td>
-<td>{{laser.localisation}}</td>
-<td>{{laser.maxpower}}</td>
-<td>{{laser.voltage}}</td>
-<td>{{laser.wavelength}}</td>
+<td>{{laser.equipment.manufacturer}}</td>
+<td>{{laser.equipment.model}}</td>
+<td>{{laser.equipment.quantity}}</td>
+<td>{{laser.equipment.shape}}</td>
+<td>{{laser.equipment.mounted}}</td>
+<td>{{laser.location.localisation}} - {{laser.location.experimenter}}</td>
+<td>{{laser.equipment.maxpower}}</td>
+<td>{{laser.equipment.voltage}}</td>
+<td>{{laser.equipment.wavelength}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}

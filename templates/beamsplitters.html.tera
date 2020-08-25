@@ -25,19 +25,19 @@
 {% block tabledata %}
 {% for beamsplitter in rows -%}
 <tr>
-<td>{{beamsplitter.manufacturer}}</td>
-<td>{{beamsplitter.model}}</td>
-<td>{{beamsplitter.diameter}}</td>
-<td>{{beamsplitter.quantity}}</td>
-<td>{{beamsplitter.shape}}</td>
-<td>{{beamsplitter.mounted}}</td>
-<td>{{beamsplitter.localisation}}</td>
-<td>{{beamsplitter.lower_operatingwavelengthrange_bound}} - {{beamsplitter.upper_operatingwavelengthrange_bound}}</td>
-<td>{{beamsplitter.lower_arrange_bound}} - {{beamsplitter.upper_arrange_bound}}</td>
-<td>{{beamsplitter.model_type}}</td>
-<td>{{beamsplitter.reflectance}}</td>
-<td>{{beamsplitter.transmittance}}</td>
-<td>{{beamsplitter.thickness}}</td>
+<td>{{beamsplitter.equipment.manufacturer}}</td>
+<td>{{beamsplitter.equipment.model}}</td>
+<td>{{beamsplitter.equipment.diameter}}</td>
+<td>{{beamsplitter.equipment.quantity}}</td>
+<td>{{beamsplitter.equipment.shape}}</td>
+<td>{{beamsplitter.equipment.mounted}}</td>
+<td>{{beamsplitter.location.localisation}} - {{beamsplitter.location.experimenter}}</td>
+<td>{{beamsplitter.equipment.lower_operatingwavelengthrange_bound}} - {{beamsplitter.equipment.upper_operatingwavelengthrange_bound}}</td>
+<td>{{beamsplitter.equipment.lower_arrange_bound}} - {{beamsplitter.equipment.upper_arrange_bound}}</td>
+<td>{{beamsplitter.equipment.model_type}}</td>
+<td>{{beamsplitter.equipment.reflectance}}</td>
+<td>{{beamsplitter.equipment.transmittance}}</td>
+<td>{{beamsplitter.equipment.thickness}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}

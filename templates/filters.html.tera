@@ -18,15 +18,15 @@
 {% block tabledata %}
 {% for filter in rows -%}
 <tr>
-<td>{{ filter.manufacturer }}</td>
-<td>{{ filter.model }}</td>
-<td>{{ filter.diameter }}</td>
-<td>{{ filter.quantity }}</td>
-<td>{{ filter.shape }}</td>
-<td>{{ filter.mounted }}</td>
-<td>{{ filter.localisation }}</td>
-<td>{{ filter.lower_operatingwavelengthrange_bound }} - {{ filter.upper_operatingwavelengthrange_bound }}</td>
-<td>{{ filter.adjustable }}</td>
+<td>{{ filter.equipment.manufacturer }}</td>
+<td>{{ filter.equipment.model }}</td>
+<td>{{ filter.equipment.diameter }}</td>
+<td>{{ filter.equipment.quantity }}</td>
+<td>{{ filter.equipment.shape }}</td>
+<td>{{ filter.equipment.mounted }}</td>
+<td>{{ filter.location.localisation }} - {{ filter.location.experimenter}}</td>
+<td>{{ filter.equipment.lower_operatingwavelengthrange_bound }} - {{ filter.equipment.upper_operatingwavelengthrange_bound }}</td>
+<td>{{ filter.equipment.adjustable }}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}

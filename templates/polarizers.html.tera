@@ -18,15 +18,15 @@
 {% block tabledata %}
 {% for polarizer in rows -%}
 <tr>
-<td>{{polarizer.manufacturer}}</td>
-<td>{{polarizer.model}}</td>
-<td>{{polarizer.diameter}}</td>
-<td>{{polarizer.quantity}}</td>
-<td>{{polarizer.shape}}</td>
-<td>{{polarizer.mounted}}</td>
-<td>{{polarizer.localisation}}</td>
-<td>{{polarizer.lower_operatingwavelengthrange_bound }} - {{polarizer.upper_operatingwavelengthrange_bound }}</td>
-<td>{{polarizer.model_type}}</td>
+<td>{{polarizer.equipment.manufacturer}}</td>
+<td>{{polarizer.equipment.model}}</td>
+<td>{{polarizer.equipment.diameter}}</td>
+<td>{{polarizer.equipment.quantity}}</td>
+<td>{{polarizer.equipment.shape}}</td>
+<td>{{polarizer.equipment.mounted}}</td>
+<td>{{polarizer.location.localisation}} - {{polarizer.location.experimenter}}</td>
+<td>{{polarizer.equipment.lower_operatingwavelengthrange_bound }} - {{polarizer.equipment.upper_operatingwavelengthrange_bound }}</td>
+<td>{{polarizer.equipment.model_type}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}

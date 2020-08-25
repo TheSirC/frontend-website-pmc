@@ -23,18 +23,18 @@
 {% block tabledata %}
 {% for lense in rows -%}
 <tr>
-<td>{{lense.manufacturer}}</td>
-<td>{{lense.model}}</td>
-<td>{{lense.focal_length}}</td>
-<td>{{lense.diameter}}</td>
-<td>{{lense.quantity}}</td>
-<td>{{lense.shape}}</td>
-<td>{{lense.mounted}}</td>
-<td>{{lense.mount_type}}</td>
-<td>{{lense.localisation}}</td>
-<td>{{lense.lower_operatingwavelengthrange_bound}} - {{lense.upper_operatingwavelengthrange_bound}}</td>
-<td>{{lense.lower_arrange_bound}} - {{lense.upper_arrange_bound}}</td>
-<td>{{lense.model_type}}</td>
+<td>{{lense.equipment.manufacturer}}</td>
+<td>{{lense.equipment.model}}</td>
+<td>{{lense.equipment.focal_length}}</td>
+<td>{{lense.equipment.diameter}}</td>
+<td>{{lense.equipment.quantity}}</td>
+<td>{{lense.equipment.shape}}</td>
+<td>{{lense.equipment.mounted}}</td>
+<td>{{lense.equipment.mount_type}}</td>
+<td>{{lense.location.localisation}} - {{lense.location.experimenter}}</td>
+<td>{{lense.equipment.lower_operatingwavelengthrange_bound}} - {{lense.equipment.upper_operatingwavelengthrange_bound}}</td>
+<td>{{lense.equipment.lower_arrange_bound}} - {{lense.equipment.upper_arrange_bound}}</td>
+<td>{{lense.equipment.model_type}}</td>
 </tr>
 {%- endfor %}
 {% endblock tabledata %}
